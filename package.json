@@ -4,17 +4,19 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-360/scripts/packager.js",
-    "bundle": "node node_modules/react-360/scripts/bundle.js",
+    "bundle": "node node_modules/react-360/scripts/bundle.js && npm run copy:assets",
     "open": "node -e \"require('xopen')('http://localhost:8081/index.html')\"",
     "devtools": "react-devtools",
-    "test": "jest"
+    "test": "jest",
+    "copy:assets": "cpx ./static_assets/* ./build/static_assets --clean"
   },
   "dependencies": {
+    "cpx": "^1.5.0",
     "react": "16.3.2",
-    "react-native": "~0.55.4",
-    "three": "^0.87.0",
     "react-360": "~1.1.0",
-    "react-360-web": "~1.1.0"
+    "react-360-web": "~1.1.0",
+    "react-native": "~0.55.4",
+    "three": "^0.87.0"
   },
   "devDependencies": {
     "babel-jest": "^19.0.0",
